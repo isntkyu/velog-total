@@ -124,11 +124,13 @@ app.post('/search_post', function (req, res) {
     console.log('POST');
     console.log(req.body);
     let userName = req.body.userId;
+    let accessToken = req.body.accessToken;
     async.waterfall([
         function(callback) { //태그 다 가져오기
             got.post("https://v2.velog.io/graphql", {
                 headers: {
-                    cookie: "_ga=GA1.2.402592865.1574765075; __gads=ID=1d61987ced4df306-226a319d7cc600d5:T=1616220310:RT=1616220310:S=ALNI_Ma3n58Jmjk2d9IittCQnnfAJw0bIw; refresh_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiYzJlNTgwYzMtYzE4OC00NzBiLWFiYzAtMTg1NThjZDRlZGRkIiwidG9rZW5faWQiOiI5MjdjMjBjZS05YjQyLTRmZGItOGRmYi1lNWY5NWQ3YTIyYmQiLCJpYXQiOjE2NDM1Mzc4NjEsImV4cCI6MTY0NjEyOTg2MSwiaXNzIjoidmVsb2cuaW8iLCJzdWIiOiJyZWZyZXNoX3Rva2VuIn0.r7uaM9_UMEh9SGA1_2umCWli9IkSByJSGOGCAqoaeAw; refresh_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiYzJlNTgwYzMtYzE4OC00NzBiLWFiYzAtMTg1NThjZDRlZGRkIiwidG9rZW5faWQiOiI5MjdjMjBjZS05YjQyLTRmZGItOGRmYi1lNWY5NWQ3YTIyYmQiLCJpYXQiOjE2NDM1Mzc4NjEsImV4cCI6MTY0NjEyOTg2MSwiaXNzIjoidmVsb2cuaW8iLCJzdWIiOiJyZWZyZXNoX3Rva2VuIn0.r7uaM9_UMEh9SGA1_2umCWli9IkSByJSGOGCAqoaeAw; _gid=GA1.2.852154745.1644056278; access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiYzJlNTgwYzMtYzE4OC00NzBiLWFiYzAtMTg1NThjZDRlZGRkIiwiaWF0IjoxNjQ0MTM1NDc2LCJleHAiOjE2NDQxMzkwNzYsImlzcyI6InZlbG9nLmlvIiwic3ViIjoiYWNjZXNzX3Rva2VuIn0.YpJyylscaK9S6BbVRR8WiOCcyavAI7f0tMssktKZO_U; access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiYzJlNTgwYzMtYzE4OC00NzBiLWFiYzAtMTg1NThjZDRlZGRkIiwiaWF0IjoxNjQ0MTM1NDc2LCJleHAiOjE2NDQxMzkwNzYsImlzcyI6InZlbG9nLmlvIiwic3ViIjoiYWNjZXNzX3Rva2VuIn0.YpJyylscaK9S6BbVRR8WiOCcyavAI7f0tMssktKZO_U; _gat_gtag_UA_125599395_1=1    }"            },
+                   cookie: accessToken
+                },
                 json: {
                     "operationName":"Posts",
                     "variables":{
@@ -155,7 +157,8 @@ app.post('/search_post', function (req, res) {
                 function iter(callback) {
                     got.post("https://v2.velog.io/graphql", {
                         headers: {
-                            cookie: "_ga=GA1.2.402592865.1574765075; __gads=ID=1d61987ced4df306-226a319d7cc600d5:T=1616220310:RT=1616220310:S=ALNI_Ma3n58Jmjk2d9IittCQnnfAJw0bIw; refresh_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiYzJlNTgwYzMtYzE4OC00NzBiLWFiYzAtMTg1NThjZDRlZGRkIiwidG9rZW5faWQiOiI5MjdjMjBjZS05YjQyLTRmZGItOGRmYi1lNWY5NWQ3YTIyYmQiLCJpYXQiOjE2NDM1Mzc4NjEsImV4cCI6MTY0NjEyOTg2MSwiaXNzIjoidmVsb2cuaW8iLCJzdWIiOiJyZWZyZXNoX3Rva2VuIn0.r7uaM9_UMEh9SGA1_2umCWli9IkSByJSGOGCAqoaeAw; refresh_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiYzJlNTgwYzMtYzE4OC00NzBiLWFiYzAtMTg1NThjZDRlZGRkIiwidG9rZW5faWQiOiI5MjdjMjBjZS05YjQyLTRmZGItOGRmYi1lNWY5NWQ3YTIyYmQiLCJpYXQiOjE2NDM1Mzc4NjEsImV4cCI6MTY0NjEyOTg2MSwiaXNzIjoidmVsb2cuaW8iLCJzdWIiOiJyZWZyZXNoX3Rva2VuIn0.r7uaM9_UMEh9SGA1_2umCWli9IkSByJSGOGCAqoaeAw; _gid=GA1.2.852154745.1644056278; access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiYzJlNTgwYzMtYzE4OC00NzBiLWFiYzAtMTg1NThjZDRlZGRkIiwiaWF0IjoxNjQ0MTM1NDc2LCJleHAiOjE2NDQxMzkwNzYsImlzcyI6InZlbG9nLmlvIiwic3ViIjoiYWNjZXNzX3Rva2VuIn0.YpJyylscaK9S6BbVRR8WiOCcyavAI7f0tMssktKZO_U; access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiYzJlNTgwYzMtYzE4OC00NzBiLWFiYzAtMTg1NThjZDRlZGRkIiwiaWF0IjoxNjQ0MTM1NDc2LCJleHAiOjE2NDQxMzkwNzYsImlzcyI6InZlbG9nLmlvIiwic3ViIjoiYWNjZXNzX3Rva2VuIn0.YpJyylscaK9S6BbVRR8WiOCcyavAI7f0tMssktKZO_U; _gat_gtag_UA_125599395_1=1    }"                },
+                            cookie: accessToken
+                        },
                         json: {
                             "operationName":"GetStats",
                             "variables":{
