@@ -18,6 +18,7 @@
   "homepage": "https://github.com/isntkyu/velog-total#readme",
   "dependencies": {
     "async": "^3.2.3",
+    "axios": "^1.2.0",
     "express": "^4.17.2",
     "got": "^11.8.2",
     "nodemon": "^2.0.15"
