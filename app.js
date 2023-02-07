@@ -2,6 +2,7 @@ import axios from "axios";
 import _ from "lodash";
 
 const url = "https://v2cdn.velog.io/graphql";
+const access_token_cookie = ``;
 
 async function getStats(postId) {
   const response = await axios.post(
@@ -16,8 +17,7 @@ async function getStats(postId) {
     },
     {
       headers: {
-        cookie:
-          "access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiYzJlNTgwYzMtYzE4OC00NzBiLWFiYzAtMTg1NThjZDRlZGRkIiwiaWF0IjoxNjc1Nzg2NzUyLCJleHAiOjE2NzU3OTAzNTIsImlzcyI6InZlbG9nLmlvIiwic3ViIjoiYWNjZXNzX3Rva2VuIn0.YZBm-gVbWqgo99LYXySzqpJYpLX863j0wrV1Y3uc-Sw;",
+        cookie: access_token_cookie,
       },
     }
   );
@@ -38,8 +38,7 @@ async function getUserTags() {
     },
     {
       headers: {
-        cookie:
-          "access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiYzJlNTgwYzMtYzE4OC00NzBiLWFiYzAtMTg1NThjZDRlZGRkIiwiaWF0IjoxNjc1Nzg2NzUyLCJleHAiOjE2NzU3OTAzNTIsImlzcyI6InZlbG9nLmlvIiwic3ViIjoiYWNjZXNzX3Rva2VuIn0.YZBm-gVbWqgo99LYXySzqpJYpLX863j0wrV1Y3uc-Sw;",
+        cookie: access_token_cookie,
       },
     }
   );
@@ -61,8 +60,7 @@ async function getPosts(tagName) {
     },
     {
       headers: {
-        cookie:
-          "access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiYzJlNTgwYzMtYzE4OC00NzBiLWFiYzAtMTg1NThjZDRlZGRkIiwiaWF0IjoxNjc1Nzg2NzUyLCJleHAiOjE2NzU3OTAzNTIsImlzcyI6InZlbG9nLmlvIiwic3ViIjoiYWNjZXNzX3Rva2VuIn0.YZBm-gVbWqgo99LYXySzqpJYpLX863j0wrV1Y3uc-Sw;",
+        cookie: access_token_cookie,
       },
     }
   );
