@@ -1,43 +1,55 @@
 <!DOCTYPE html>
 
-        <html lang="en">
-<head>
-    <meta charset="utf-8">
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
     <title>search form</title>
 
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
 
-<body>
-   
-    <center>
+    <body>
+      <center>
         <div class="container">
-            <form action="/search_post" method="POST">
+          <form action="/total" method="POST">
             <div class="searchContainer">
-                <h1>Velog 사용자 닉네임을 검색하세요.</h1>
-                <p class="lead">Enter a user name to Velog User's total view count.</p>
-                <div class='input-group'>
-                    <input class='form-control' type="text" id="searchUser" class="form-control" placeholder="velog Users Names" name="userId">
-                    <input class='form-control' type="text" id="searchUser" class="form-control" placeholder="cookie" name="accessToken">
-                    <span class="input-group-btn">
-                            <button class="btn btn-primary" type="submit">검색</button>
-                    </span>
-                </div>
-                <!-- name 은 변수이름 name = 'name2' -->
+              <h1>Velog 사용자 닉네임을 검색하세요.</h1>
+              <p class="lead">
+                Enter a user name to Velog User's total view count.
+              </p>
+              <div class="input-group">
+                <input
+                  class="form-control"
+                  type="text"
+                  id="searchUser"
+                  class="form-control"
+                  placeholder="velog Users Names"
+                  name="username"
+                />
+                <input
+                  class="form-control"
+                  type="text"
+                  id="searchUser"
+                  class="form-control"
+                  placeholder="cookie"
+                  name="cookie"
+                />
+                <span class="input-group-btn">
+                  <button class="btn btn-primary" type="submit">검색</button>
+                </span>
+              </div>
             </div>
           </form>
-            <br>
-            <div id="profile">
-
-            </div>
+          <br />
+          <div id="profile"></div>
         </div>
-    
-
-    </center>
-
-</body>
-</head>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
+      </center>
+    </body>
+  </head>
+  <link
+    rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+    crossorigin="anonymous"
+  />
 </html>
